@@ -1,18 +1,17 @@
 #!/bin/bash
 
 snmpwalk() {
-	
+
 	snmpget $3 -c $2 $1 $4
 	oid=$(echo "$output" | cut -d " " -f1)	
-	originalOid=$(echo $4 | cut -d "." -f1-8)
 	
 	while true;
 	do
 		output=$(snmpgetnext $3 -c $2 $1 -On $oid 2> /dev/null)	
 		oid=$(echo "$output" | cut -d " " -f1)
 	
-		if [[ "$?" -ne 0 ]] || [[ $oid != *$originalOid* ]]
-		then
+		if [[ "$?" -ne 0 ]] || [[ $oid != *$5* ]]
+		then	
 			break
 		fi
 			
@@ -33,12 +32,20 @@ else
 		
 		if [[ "$?" -ne 0 ]]
 		then
-			echo "Error with de OID"
-			exit 1
+			output=$(snmpgetnext $3 -c $2 $1 -On $4 2> /dev/null)
+			oid=$(echo "$output" | cut -d " " -f1)
+			
+			if [[ "$?" -ne 0 ]]
+			then
+				echo "Error with de OID"
+				exit 1
+			else
+				snmpwalk $1 $2 $3 $oid $4
+			fi
 		else
-			echo $output
+			snmpget $3 -c $2 $1 $4.0	
 		fi
 	else
-		snmpwalk $1 $2 $3 $4.1.0
+		snmpwalk $1 $2 $3 $4.1.0 $4
 	fi
 fi
