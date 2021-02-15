@@ -24,15 +24,24 @@ if [[ "$#" -ne 4 ]]
 then
 	echo "usage: $0 <domain name> <community> <SNMP version> <OID>"
 else	
-	output=$(snmpget $3 -c $2 $1 -On $4.1.0 2> /dev/null)
+	case $3 in
+		1)	
+			version="-v1"
+			;;
+		2)
+			version="-v2"
+			;;
+	esac
+
+	output=$(snmpget $version $2 $1 -On $4.1.0 2> /dev/null)
 	
 	if [[ "$?" -ne 0 ]]
 	then
-		output=$(snmpget $3 -c $2 $1 -On $4.0 2> /dev/null)
+		output=$(snmpget $version -c $2 $1 -On $4.0 2> /dev/null)
 		
 		if [[ "$?" -ne 0 ]]
 		then
-			output=$(snmpgetnext $3 -c $2 $1 -On $4 2> /dev/null)
+			output=$(snmpgetnext $version -c $2 $1 -On $4 2> /dev/null)
 			oid=$(echo "$output" | cut -d " " -f1)
 			
 			if [[ "$?" -ne 0 ]]
@@ -40,12 +49,12 @@ else
 				echo "Error with de OID"
 				exit 1
 			else
-				snmpwalk $1 $2 $3 $oid $4
+				snmpwalk $1 $2 $version $oid $4
 			fi
 		else
-			snmpget $3 -c $2 $1 $4.0	
+			snmpget $version -c $2 $1 $4.0	
 		fi
 	else
-		snmpwalk $1 $2 $3 $4.1.0 $4
+		snmpwalk $1 $2 $version $4.1.0 $4
 	fi
 fi
