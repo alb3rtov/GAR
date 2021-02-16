@@ -7,7 +7,7 @@ Ejercicio 1. ¿Cómo se puede obtener, a través de SNMP, una información equiv
 ```
 Ejercicio 2. ¿Cómo se puede obtener, a través de SNMP, una información equivalente a la que proporciona el comando # ifconfig?
 ```bash
- snmptable -v1 -c gar tales .1.3.6.1.21.4.20
+ snmptable -v1 -c gar tales .1.3.6.1.2.1.4.20
 ```
 Ejercicio 3. ¿De qué formas se pueden obtener, a través de SNMP, las direcciones física y lógica de un host?
 ```bash
