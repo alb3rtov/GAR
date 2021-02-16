@@ -26,7 +26,9 @@ Ejercicio 6. ¿Cómo se puede obtener, a través de SNMP, la pasarela de red de 
  ./ejercicio6.sh tales.esi.uclm.es gar -v1
 ```
 Ejercicio 7. ¿Cómo se puede obtener, a través de SNMP, la dirección de la red a la que pertenece un host?
-
+```bash
+ ./ejercicio7.sh tales.esi.uclm.es gar -v1
+```
 Ejercicio 8. ¿Cómo se puede determinar, mediante SNMP, la carga de CPU de un host?
 ```bash
  snmptable -v1 -c gar tales .1.3.6.1.2.1.25.3.3
