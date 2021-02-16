@@ -9,5 +9,5 @@ else
 	macAddr=$(snmpget -v1 -c gar tales .1.3.6.1.2.1.2.2.1.6.$ipIndex | awk '{print $4}')
 
 	echo "MAC Address: $macAddr"
-	echo "Logical Address: "	
+	echo "Logical Address: $ipAddr"
 fi
