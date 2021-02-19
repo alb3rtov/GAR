@@ -31,7 +31,7 @@ Ejercicio 7. ¿Cómo se puede obtener, a través de SNMP, la dirección de la re
 ```
 Ejercicio 8. ¿Cómo se puede determinar, mediante SNMP, la carga de CPU de un host?
 ```bash
- ./ejercicio8.sh tales.esi.uclm.es gar -v1****
+ ./ejercicio8.sh tales.esi.uclm.es gar -v1
 ```
 Ejercicio 9. ¿Cómo se puede determinar, mediante SNMP, la memoria principal en uso de un host?
 ```bash
@@ -39,7 +39,7 @@ Ejercicio 9. ¿Cómo se puede determinar, mediante SNMP, la memoria principal en
 ```
 Ejercicio 10. ¿Cómo se puede obtener, mediante SNMP, la utilización de su interfaz de red?
 ```bash
- ./ejercicio10.sh tales.esi.uclm.es gar -v1****
+ ./ejercicio10.sh tales.esi.uclm.es gar -v1
 ```
 Ejercicio 11. Desarrolle su propio comando snmpwalk (Opcional)
 ```bash
