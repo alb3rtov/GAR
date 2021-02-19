@@ -7,7 +7,7 @@ Ejercicio 1. ¿Cómo se puede obtener, a través de SNMP, una información equiv
 ```
 Ejercicio 2. ¿Cómo se puede obtener, a través de SNMP, una información equivalente a la que proporciona el comando # ifconfig?
 ```bash
- snmptable -v1 -c gar tales .1.3.6.1.2.1.4.20
+ ./ejercicio2.sh tales.esi.uclm.es gar -v1
 ```
 Ejercicio 3. ¿De qué formas se pueden obtener, a través de SNMP, las direcciones física y lógica de un host?
 ```bash
@@ -19,7 +19,7 @@ Ejercicio 4. ¿Cómo se puede obtener, a través de SNMP, la máscara de red de 
 ```
 Ejercicio 5. ¿Cómo se puede obtener, a través de SNMP, una información equivalente a la que proporciona el comando # netstat -r?
 ```bash
- snmptable -v1 -c gar tales ipRouteTable o snmptable -v1 -c gar tales .1.3.6.1.2.1.4.21
+ ./ejercicio5.sh tales.esi.uclm.es gar -v1
 ```
 Ejercicio 6. ¿Cómo se puede obtener, a través de SNMP, la pasarela de red de un host?
 ```bash
@@ -31,14 +31,16 @@ Ejercicio 7. ¿Cómo se puede obtener, a través de SNMP, la dirección de la re
 ```
 Ejercicio 8. ¿Cómo se puede determinar, mediante SNMP, la carga de CPU de un host?
 ```bash
- snmptable -v1 -c gar tales .1.3.6.1.2.1.25.3.3
+ ./ejercicio8.sh tales.esi.uclm.es gar -v1****
 ```
 Ejercicio 9. ¿Cómo se puede determinar, mediante SNMP, la memoria principal en uso de un host?
 ```bash
  snmpget -v1 -c gar tales .1.3.6.1.2.1.25.2.2.0
 ```
 Ejercicio 10. ¿Cómo se puede obtener, mediante SNMP, la utilización de su interfaz de red?
-
+```bash
+ ./ejercicio10.sh tales.esi.uclm.es gar -v1****
+```
 Ejercicio 11. Desarrolle su propio comando snmpwalk (Opcional)
 ```bash
  ./ejercicio11.sh tales.esi.uclm.es gar -v1 .1.3.6.1.2.1.1
