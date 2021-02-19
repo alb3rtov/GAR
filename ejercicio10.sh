@@ -19,7 +19,7 @@ else
 	duration=$SECONDS
 
 	let "n=octetos*8*100"
-	let "n=n/(duration*ifSpeed)"
+	let "n=n/(60*ifSpeed)"
 	
 	echo $n
 fi
