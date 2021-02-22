@@ -1,4 +1,4 @@
-# Práctica 1 de Gestión y Administración de Redes
+# Práctica 1 - Vista General de la MIB
 Bash scripts with basic snmp operation (snmpget and snmpgetnext) supported by NET-SNMP
 
 Ejercicio 1. ¿Cómo se puede obtener, a través de SNMP, una información equivalente a la que proporciona el comando # uname -a?
