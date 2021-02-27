@@ -18,4 +18,15 @@ Traduce uno o mas identificadores de objetos en sus valores textuales o vicevers
 
 
 $ snmpnetstat -v1 -c gar tales
-Funciona como el comando netstat en linux. Información relacionada con la red. 
+Funciona como el comando netstat en linux. Información relacionada con la red.
+
+$snmpconf
+Muestra una forma interactiva de modificiar el archivo de configuración snmp.conf
+Puedes especificiar que mibs cargar, el directorio donde se encuentran las mibs, cargar una mib en 
+particular desde una ruta particular...
+
+$ snmpbulkwalk -v2c -c gar tales .1.3.6.1.2.1.4.20
+La diferencia entre snmpbulkwalk y snmpwalk es que snmpbulkwalk es mas rapido que snmpwalk,
+snmpbulkwalk utiliza la caracteristica del protocolo GETBULK SNMP para consultar un arbol completo de información sobre una entidad de red.
+Este comando puede enpaquetar mas objetos en los paquetes especificando "repetidores".
+ 
